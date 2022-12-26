@@ -12,13 +12,14 @@ import org.testng.annotations.BeforeSuite;
 
 public class BaseClass {
 
+	public static String currDir=System.getProperty("user.dir");
 	public static WebDriver driver;
 	public static Properties pro;
 
 	@BeforeSuite
 	public void initBrowser() {
-
-		loadConfig("C:\\Users\\Admin\\Documents\\Automation\\ZAutomation\\src\\test\\resources\\config\\config.properties");
+		
+		loadConfig(currDir+"\\src\\test\\resources\\config\\config.properties");
 
 		if ("chrome".equalsIgnoreCase(pro.getProperty("browser"))) {
 			driver=new ChromeDriver();
