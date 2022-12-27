@@ -10,24 +10,20 @@ import com.hcl.base.BaseClass;
 public class Login extends BaseClass {
 	
 	@Test
-	public void sampel() {
+	public void sampel() throws InterruptedException {
 		
 
-		
-		//Actions actions=new Actions(driver);
-		Actions actions=new Actions(driver);
-		actions.sendKeys(driver.findElement(By.id("email")), "ramyashihb").build().perform();
 
-		actions.sendKeys(driver.findElement(By.id("pass")), "1234456").build().perform();
-
-		//actions.click(driver.findElement(By.name("login"))).build().perform();
-
-		
-		//driver.findElement(By.name("login")).submit();
-		//driver.findElement(By.name("login")).click();
-
-		//actions.sendKeys(Keys.ENTER).build().perform();
-		actions.sendKeys(Keys.ENTER).build().perform();
+		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("raja");
+		driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("sriram");
+		driver.findElement(By.xpath("//a[text()='Sign up for Facebook']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@name='reg_email__']")).sendKeys("sriram948@gmail.com");
+		driver.findElement(By.xpath("//input[@id='password_step_input']")).sendKeys("hardik143");
+		driver.findElement(By.xpath("//select[@id='day']")).sendKeys("28");
+		driver.findElement(By.xpath("//select[@id='month']")).sendKeys("Apr");
+		driver.findElement(By.xpath("//select[@id='year']")).sendKeys("2000");
+		driver.findElement(By.xpath("(//input[@name='sex'])[2]")).click();
 		
 	}
 
