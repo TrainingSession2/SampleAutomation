@@ -4,33 +4,10 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class SeleniumUtils extends BaseClass {
-	
-	public void initBrowser(String browser) {
-		if (browser.equalsIgnoreCase("chrome")) {
-			driver=new ChromeDriver();
-		}else if (browser.equalsIgnoreCase("Edge")) {
-			driver=new EdgeDriver();
-		}else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Users\\DELL LATITUDE 7480\\Documents\\Gayathri_Automation\\ReusabilityComponents\\geckodriver.exe");
-			driver=new FirefoxDriver();
-		}else if (browser.equalsIgnoreCase("safari")) {
-			driver=new SafariDriver();
-		}else {
-			System.out.println("This browser is not available");
-		}
-		driver.manage().window().maximize();
-	}
 
-	public void applicationUrl(String url) {
-		driver.get(url);
-	}
 
 	public void enterTextOnElement(String locatortype,String locator,String value) {
 		if (locatortype.equalsIgnoreCase("xpath")) {
