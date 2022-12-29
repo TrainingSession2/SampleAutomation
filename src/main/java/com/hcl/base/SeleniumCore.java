@@ -1,16 +1,14 @@
 package com.hcl.base;
 
-import org.testng.annotations.Test;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
-public class SeleniumCore extends SeleniumUtils {
-	
-	@Test
-	public void sample() {
-		enterTextOnElement("id", "email", "Gayathri");
-		enterTextOnElement("id", "pass", "123fsfjhv");
-		waitForSec(4000);
-		clickOnElement("name", "login");
-		waitForSec(4000);
+public class SeleniumCore extends BaseClass{
+
+	public void pressEnterButton() {
+
+		Actions actions =new Actions(driver);
+		actions.sendKeys(Keys.ENTER).build().perform();
 	}
 
 }
