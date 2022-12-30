@@ -11,6 +11,7 @@ public class ApplicationLogin extends BaseClass {
 
 	@Test
 	public void loginApplication() {
+		seleniumUtils.waitForSec(3000);
 		seleniumUtils.enterTextOnElement("name", "username", "Admin");
 		seleniumUtils.enterTextOnElement("name", "password", "admin123");
 		seleniumUtils.clickOnElement("xpath", "//button[@type='submit']");

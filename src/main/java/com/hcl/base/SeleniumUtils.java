@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SeleniumUtils extends BaseClass {
 
-
 	public void enterTextOnElement(String locatortype,String locator,String value) {
 		if (locatortype.equalsIgnoreCase("xpath")) {
 			driver.findElement(By.xpath(locator)).sendKeys(value);
