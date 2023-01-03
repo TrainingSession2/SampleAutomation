@@ -27,5 +27,15 @@ public class SeleniumCore extends BaseClass{
 		actions =new Actions(driver);
 		actions.click(element).build().perform();
 	}
+	
+	public void clickOnSubMenu(WebElement element) {
+			actions =new Actions(driver);
+			actions.click(element).build().perform();
+	}
+	
+	public void moveToElements(WebElement element) {
+		actions =new Actions(driver);
+		actions.click(element).build().perform();
+	}
 
 }
