@@ -77,5 +77,22 @@ public class SeleniumUtils extends BaseClass {
 			System.out.println(value);
 		}	
 	}
+	
+	
+	//............>>>>........ FRAMES{ Window inside another Window}.........<<<<<<......\\
+
+
+	public void switchToFrameWithCount(String iframe) {
+		List<WebElement>frame=driver.findElements(By.xpath(iframe));
+		System.out.println("Number of Frame = "+frame.size());
+
+		for (int i = 0; i < frame.size(); i++) {
+			try {
+				driver.switchTo().frame(i);
+
+			} catch (Exception e) {
+				driver.switchTo().defaultContent();
+			}}
+	}
 
 }
