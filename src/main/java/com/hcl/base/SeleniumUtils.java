@@ -58,24 +58,20 @@ public class SeleniumUtils extends BaseClass {
 			e.printStackTrace();
 		}
 	}
-	public void selectByIndex(WebElement element, int value) {
-		Select select=new Select(element);
-		select.selectByIndex(value);
-	}
 
-	public void selectByVisibleText(WebElement element, String text) {
-		Select select=new Select(element);
-		select.selectByVisibleText(text);
-	}
-
-	public void selectByValue(WebElement element) {
-		Select select=new Select(element);
-		List<WebElement> list=select.getOptions();
-		for (int i = 0; i < list.size(); i++) {
-			String value=list.get(i).getAttribute("value");
-			select.selectByValue(value);
-			System.out.println(value);
-		}	
+	Select select;
+	public void selectDropdown(String index_Value_text,WebElement element,String dropdownValue) {
+		select=new Select(element);
+		if (index_Value_text.equalsIgnoreCase("index")) {
+			int value=Integer.parseInt(dropdownValue);
+			select.selectByIndex(value);
+		}else if (index_Value_text.equalsIgnoreCase("value")) {
+			select.selectByValue(dropdownValue);
+		}else if (index_Value_text.equalsIgnoreCase("text")) {
+			select.selectByVisibleText(dropdownValue);
+		}else {
+			System.out.println("Not available........");
+		}
 	}
 	
 	
