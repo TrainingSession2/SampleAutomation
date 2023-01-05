@@ -17,4 +17,15 @@ public class ReuseLocators {
 		return xpath;
 	}
 	
+	public String clickMenu(String menuName) {
+		String xpath="//span[text()='"+menuName+"']//parent::a";
+		return xpath;
+	}
+	
+	public String clickButtons(String button) {
+		String xpath="//button[text()='"+button+"']//parent::div";
+		return xpath;
+		
+	}
+	
 }
