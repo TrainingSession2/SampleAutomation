@@ -15,12 +15,14 @@ public class BaseClass {
 	public static String currDir=System.getProperty("user.dir");
 	public static WebDriver driver;
 	public static Properties pro;
+	public static Properties loc;
 
 	@BeforeSuite
 	public void initBrowser() {
 		
 		loadConfig(currDir+"\\src\\test\\resources\\config\\config.properties");
-
+		loadLocators(currDir+"\\src\\test\\resources\\config\\locators.properties");
+		
 		if ("chrome".equalsIgnoreCase(pro.getProperty("browser"))) {
 			driver=new ChromeDriver();
 		}else if ("firefox".equalsIgnoreCase(pro.getProperty("browser"))) {
@@ -40,6 +42,17 @@ public class BaseClass {
 			FileInputStream fis=new FileInputStream(path);
 			pro=new Properties();
 			pro.load(fis);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void loadLocators(String path) {
+		try {
+			FileInputStream fis=new FileInputStream(path);
+			loc=new Properties();
+			loc.load(fis);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
