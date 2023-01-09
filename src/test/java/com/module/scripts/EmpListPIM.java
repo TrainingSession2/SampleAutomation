@@ -20,6 +20,11 @@ public class EmpListPIM extends BaseClass {
 		seleniumUtils.clickOnElement("xpath", "//a//span[text()='PIM']");
 		seleniumUtils.waitForSec(3000);
 		seleniumUtils.enterTextOnElement("xpath", reuseLocators.inputFieldName("Employee Name"), "automation");
+		seleniumUtils.waitForSec(3000);
+		seleniumUtils.enterTextOnElement("xpath", reuseLocators.inputFieldName("Employee Id"), "43677689");
+		seleniumUtils.waitForSec(3000);
+		seleniumUtils.enterTextOnElement("xpath", reuseLocators.inputFieldName("Supervisor Name"), "dhjjjhghjj");
+		seleniumUtils.waitForSec(3000);
 	}
 	
 }
